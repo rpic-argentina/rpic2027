@@ -2,8 +2,15 @@
   <div class="wrap">
     {{ if not .IsHome }}<a class="mini" href="{{ .Site.Home.RelPermalink }}"><img src="{{ "img/logo-corto-negro.png" | relURL }}" alt="{{ .Site.Title }}"></a>{{ end }}
     <ul>
-      {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}{{ $cur := .Language.Lang }}{{ range .AllTranslations }}{{ if ne .Language.Lang $cur }}<li class="lang"><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>{{ end }}{{ end }}
+      {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}
+      <li><details class="dropdown"><summary>{{ .Name }}</summary>
+        <ul class="sub">{{ range .Children }}<li><a href="{{ .URL }}"{{ if hasPrefix .URL "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>{{ end }}</ul>
+      </details></li>
+      {{ else }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+      {{ end }}
+      {{ $cur := .Language.Lang }}{{ range .AllTranslations }}{{ if ne .Language.Lang $cur }}<li class="lang"><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>{{ end }}{{ end }}
     </ul>
+    {{ partial "social.html" . }}
   </div>
 </nav>

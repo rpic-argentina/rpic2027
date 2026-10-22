@@ -34,3 +34,12 @@
     if(!still)requestAnimationFrame(draw);}
   size();requestAnimationFrame(draw);addEventListener("resize",size);
 })();
+
+// Cierra el menú desplegable al hacer clic afuera o con Escape
+(function(){
+  var dd=document.querySelectorAll("details.dropdown");
+  if(!dd.length) return;
+  function closeAll(except){dd.forEach(function(d){if(d!==except)d.removeAttribute("open");});}
+  document.addEventListener("click",function(e){closeAll(e.target.closest&&e.target.closest("details.dropdown"));});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll(null);});
+})();

@@ -54,3 +54,41 @@ disableKinds = ["taxonomy", "term", "RSS"]
     name = "Venue"
     url = "/en/#sede"
     weight = 40
+
+
+
+# ---------- Redes sociales (aparecen en el encabezado y el pie) ----------
+[params.social]
+  instagram = "https://www.instagram.com/rpic_argentina/"
+  facebook  = "https://www.instagram.com/rpic_argentina/"  # temporal: cambiar cuando exista la página de Facebook
+
+# ---------- Menú: ediciones anteriores (desplegable) ----------
+[[languages.es.menus.main]]
+  name = "Ediciones anteriores"
+  identifier = "previous"
+  weight = 50
+[[languages.es.menus.main]]
+  name = "2025"
+  parent = "previous"
+  url = "https://sites.google.com/view/rpic2023/ediciones-anteriores/2025"
+  weight = 10
+[[languages.es.menus.main]]
+  name = "2023"
+  parent = "previous"
+  url = "https://sites.google.com/view/rpic2023/ediciones-anteriores/2023"
+  weight = 20
+
+[[languages.en.menus.main]]
+  name = "Previous editions"
+  identifier = "previous"
+  weight = 50
+[[languages.en.menus.main]]
+  name = "2025"
+  parent = "previous"
+  url = "https://sites.google.com/view/rpic2023/ediciones-anteriores/2025"
+  weight = 10
+[[languages.en.menus.main]]
+  name = "2023"
+  parent = "previous"
+  url = "https://sites.google.com/view/rpic2023/ediciones-anteriores/2023"
+  weight = 20
