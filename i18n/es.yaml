@@ -1,0 +1,6 @@
+nav_label:
+  other: "Secciones"
+days_many:
+  other: "Faltan {n} días"
+days_one:
+  other: "Falta 1 día"

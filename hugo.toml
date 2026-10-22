@@ -1,0 +1,56 @@
+baseURL = "https://rpic2027.pages.dev/"   # cambiar por el dominio definitivo
+title = "RPIC 2027"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false     # español en "/", inglés en "/en/"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[languages.es]
+  languageName = "Español"
+  languageCode = "es"
+  weight = 1
+  [languages.es.params]
+    description = "XXII Reunión de Trabajo en Procesamiento de la Información y Control. 22 al 24 de septiembre de 2027, Universidad Nacional de Río Cuarto."
+    footer_alt = "XXII Reunión de Trabajo en Procesamiento de la Información y Control"
+    footer_text = "RPIC 2027 · Río Cuarto, Córdoba, Argentina"
+  [[languages.es.menus.main]]
+    name = "Llamado"
+    url = "/#llamado"
+    weight = 10
+  [[languages.es.menus.main]]
+    name = "Fechas"
+    url = "/#fechas"
+    weight = 20
+  [[languages.es.menus.main]]
+    name = "Temas"
+    url = "/#temas"
+    weight = 30
+  [[languages.es.menus.main]]
+    name = "Sede"
+    url = "/#sede"
+    weight = 40
+
+[languages.en]
+  languageName = "English"
+  languageCode = "en"
+  weight = 2
+  [languages.en.params]
+    description = "XXII Workshop on Information Processing and Control. September 22–24, 2027, Universidad Nacional de Río Cuarto, Argentina."
+    footer_alt = "XXII Workshop on Information Processing and Control"
+    footer_text = "RPIC 2027 · Río Cuarto, Córdoba, Argentina"
+  [[languages.en.menus.main]]
+    name = "Call"
+    url = "/en/#llamado"
+    weight = 10
+  [[languages.en.menus.main]]
+    name = "Dates"
+    url = "/en/#fechas"
+    weight = 20
+  [[languages.en.menus.main]]
+    name = "Topics"
+    url = "/en/#temas"
+    weight = 30
+  [[languages.en.menus.main]]
+    name = "Venue"
+    url = "/en/#sede"
+    weight = 40

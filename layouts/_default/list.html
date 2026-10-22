@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section>
+  <div class="wrap">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="prose page-body">{{ .Content }}</div>
+    {{ with .Pages }}<ul class="page-list">{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Date }}{{ if not .IsZero }} <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2006-01-02" }}</time>{{ end }}{{ end }}</li>{{ end }}</ul>{{ end }}
+  </div>
+</section>
+{{ end }}

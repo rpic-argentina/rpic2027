@@ -1,0 +1,9 @@
+<nav class="nav" aria-label="{{ i18n "nav_label" }}">
+  <div class="wrap">
+    {{ if not .IsHome }}<a class="mini" href="{{ .Site.Home.RelPermalink }}"><img src="{{ "img/logo-corto-negro.png" | relURL }}" alt="{{ .Site.Title }}"></a>{{ end }}
+    <ul>
+      {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}{{ $cur := .Language.Lang }}{{ range .AllTranslations }}{{ if ne .Language.Lang $cur }}<li class="lang"><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>{{ end }}{{ end }}
+    </ul>
+  </div>
+</nav>
